@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snehalata Tate | AI Developer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: radial-gradient(circle at top, #0f2027, #020c13 70%);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Glow background */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      background: rgba(0, 212, 255, 0.18);
+      filter: blur(140px);
+      top: -150px;
+      left: -150px;
+      animation: float 10s infinite alternate ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      from { transform: translate(0,0); }
+      to { transform: translate(220px,180px); }
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-link { color: white !important; transition: 0.3s; }
+    .nav-link:hover { color: #00d4ff !important; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #00d4ff;
+      box-shadow: 0 0 25px rgba(0,212,255,0.7);
+      margin: 0 auto 20px;
+      transition: 0.4s;
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #00d4ff;
+    }
+
+    .hero h1 { font-size: 56px; font-weight: 700; }
+    .hero span { color: #00d4ff; }
+
+    .typing { border-right: 3px solid #00d4ff; white-space: nowrap; overflow: hidden; }
+
+    .btn-custom {
+      background: linear-gradient(45deg, #00d4ff, #6a5cff);
+      border: none;
+      border-radius: 30px;
+      padding: 12px 28px;
+      margin: 10px;
+      font-weight: 600;
+      transition: 0.4s;
+      color: white;
+    }
+
+    .btn-custom:hover {
+      transform: scale(1.1);
+      background: white;
+      color: black;
+    }
+
+    section { padding: 100px 0; }
+    .section-title { text-align: center; font-size: 38px; margin-bottom: 60px; }
+
+    /* Glass cards */
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      transition: 0.4s;
+      color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-15px) scale(1.04);
+      box-shadow: 0 0 25px rgba(0,212,255,0.6);
+    }
+
+    /* Skills */
+    .skill-badge {
+      background: rgba(0,212,255,0.15);
+      border: 1px solid rgba(0,212,255,0.4);
+      padding: 10px 18px;
+      margin: 6px;
+      border-radius: 25px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .skill-badge:hover { background: #00d4ff; color: black; }
+
+    /* Contact */
+    .contact-box {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.6);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#home">Snehalata Tate</a>
+      <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav">☰</button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div>
+      <div class="profile-img">
+        <img src="images/profile.png" alt="Snehalata">
+      </div>
+      <h1>Hello, I'm <span>Snehalata</span></h1>
+      <h3 class="typing" id="typing"></h3>
+      <a href="#projects" class="btn btn-custom">View Projects</a>
+      <a href="resume.pdf" class="btn btn-custom" download>Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="card p-4"><h5>AI Chatbot</h5><p>Smart conversational assistant for students and businesses.</p></div></div>
+        <div class="col-md-4"><div class="card p-4"><h5>Scam Detector</h5><p>ML system detecting fake job and loan offers.</p></div></div>
+        <div class="col-md-4"><div class="card p-4"><h5>Women Safety App</h5><p>Emergency alert, tracking and AI verification system.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container text-center">
+      <h2 class="section-title">Skills</h2>
+      <span class="skill-badge">Python</span>
+      <span class="skill-badge">Flask</span>
+      <span class="skill-badge">Machine Learning</span>
+      <span class="skill-badge">AI</span>
+      <span class="skill-badge">HTML</span>
+      <span class="skill-badge">CSS</span>
+      <span class="skill-badge">JavaScript</span>
+      <span class="skill-badge">Flutter</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="contact-box">
+            <form>
+              <input class="form-control mb-3" placeholder="Your Name">
+              <input class="form-control mb-3" placeholder="Email">
+              <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+              <button class="btn btn-custom w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Snehalata Tate • AI Developer Portfolio</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const text = "AI Developer • ML Enthusiast • Future Innovator";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+  </script>
+
+</body>
+</html>

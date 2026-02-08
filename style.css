@@ -1,0 +1,68 @@
+*{
+display:inline-block;
+margin-top:12px;
+}
+
+
+/* ===== Buttons ===== */
+.btn-main{
+display:inline-block;
+margin-top:28px;
+padding:12px 30px;
+border-radius:30px;
+background:linear-gradient(45deg,#00d4ff,#6a5cff);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+}
+
+
+.btn-main:hover{
+transform:scale(1.08);
+background:white;
+color:black;
+}
+
+
+/* ===== Glass cards ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+
+.card-glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:26px;
+transition:0.4s;
+}
+
+
+.card-glass:hover{
+transform:translateY(-12px) scale(1.04);
+box-shadow:0 0 35px rgba(0,212,255,0.45);
+}
+
+
+/* ===== Contact ===== */
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+
+/* ===== Footer ===== */
+footer{
+background:rgba(0,0,0,0.7);
+text-align:center;
+padding:28px;
+}
