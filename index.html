@@ -105,21 +105,110 @@
 
     section { padding: 100px 0; }
     .section-title { text-align: center; font-size: 38px; margin-bottom: 60px; }
+/* ===== Projects Section ===== */
+#projects {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  
+  
+}
 
-    /* Glass cards */
-    .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      transition: 0.4s;
-      color: white;
-    }
+/* Section title */
+#projects h2 {
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 1px;
+}
 
-    .card:hover {
-      transform: translateY(-15px) scale(1.04);
-      box-shadow: 0 0 25px rgba(0,212,255,0.6);
-    }
+/* ===== Project Card ===== */
+.project-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  background: #ffffff;
+  position: relative;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Project image */
+.project-card img {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom image on hover */
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Card title */
+.project-card .card-title {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Short text */
+.short-info {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===== Hidden Extra Info ===== */
+.extra-info {
+  display: none;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #475569;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Show when active */
+.project-card.show-details .extra-info {
+  display: block;
+}
+
+/* ===== Buttons ===== */
+.toggle-btn {
+  border-radius: 30px;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Live + GitHub buttons spacing */
+.extra-info .btn {
+  margin: 5px 3px;
+  border-radius: 20px;
+}
+
+/* ===== Fade Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .project-card img {
+    height: 180px;
+  }
+}
+
 
     /* Skills */
     .skill-badge {
@@ -156,7 +245,11 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand text-white" href="#home">Snehalata Tate</a>
+      <a class="navbar-brand text-white d-flex align-items-center" href="#home">
+  <img src="images/profile.png" alt="profile" width="35" height="35" 
+       style="border-radius:50%; margin-right:10px;">
+  SNEHALATA TATE
+</a>
       <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav">☰</button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
@@ -178,62 +271,178 @@
       <h1>Hello, I'm <span>Snehalata</span></h1>
       <h3 class="typing" id="typing"></h3>
       <a href="#projects" class="btn btn-custom">View Projects</a>
-      <a href="resume.pdf" class="btn btn-custom" download>Download Resume</a>
+      <a href="images/Snehalata_resume.pdf" class="btn btn-custom" download>Download Resume</a>
     </div>
   </section>
 
+  
   <!-- Projects -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-4"><div class="card p-4"><h5>AI Chatbot</h5><p>Smart conversational assistant for students and businesses.</p></div></div>
-        <div class="col-md-4"><div class="card p-4"><h5>Scam Detector</h5><p>ML system detecting fake job and loan offers.</p></div></div>
-        <div class="col-md-4"><div class="card p-4"><h5>Women Safety App</h5><p>Emergency alert, tracking and AI verification system.</p></div></div>
-      </div>
-    </div>
-  </section>
+  <section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">My Projects</h2>
+    <div class="row g-4">
 
+      <!-- Project Card 1 -->
+
+      <div class="col-md-3">
+        <div class="card project-card h-100 shadow-sm">
+          <img src="https://fitroom.app/blog/wp-content/uploads/2025/02/AI-virtual-try-on.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Virtual Try-On Website</h5>
+            <p class="card-text short-info"> Implemented AR technology to overlay clothing items on uploaded photos in real time.</p>
+
+            <div class="extra-info">
+              <p>The Virtual Try-On System is an innovative AI-powered fashion technology that allows users to digitally preview outfits, improving the online shopping experience and reducing uncertainty in clothing purchases.
+              
+              </p>
+              <!-- <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-dark">GitHub</a> -->
+            </div>
+
+            <button class="btn btn-primary btn-sm mt-2 toggle-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Project Card 2 -->
+      <div class="col-md-3">
+        <div class="card project-card h-100 shadow-sm">
+          <img src="https://as1.ftcdn.net/v2/jpg/05/71/66/22/1000_F_571662205_lwgSpSihBwwXL4xGMcokuANwynADgTFy.jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Criminal Detection Using Face Detection</h5>
+            <p class="card-text short-info">Detect wanted criminals in real-time CCTV cameras</p>
+
+            <div class="extra-info">
+              <p>The Criminal Detection Using Face Detection system is a powerful AI-based security solution that helps authorities identify criminals quickly and efficiently using computer vision and machine learning, making surveillance smarter, faster, and more reliable.</p>
+              <!-- <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-dark">GitHub</a> -->
+            </div>
+
+            <button class="btn btn-primary btn-sm mt-2 toggle-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="col-md-3">
+        <div class="card project-card h-100 shadow-sm">
+          <img src="https://scamlegit.com/wp-content/uploads/2023/11/QR-Code-Scam.jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">SafeScan-AI Based QR Code Scanner</h5>
+            <p class="card-text short-info">AI-powered QR code scanner that detects phishing and malicious links.</p>
+
+            <!-- Hidden Extra Info -->
+            <div class="extra-info">
+              <p>This AI‑based web app scans uploaded QR codes and checks whether the URL is safe or malicious using machine learning and security rules.</p>
+              <!-- <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-dark">GitHub</a> -->
+            </div>
+
+            <button class="btn btn-primary btn-sm mt-2 toggle-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="col-md-3">
+        <div class="card project-card h-100 shadow-sm">
+          <img src="https://e2e.ti.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-06-49/AdobeStock_5F00_139609373.jpeg" class="card-img-top" alt="Project 4">
+          <div class="card-body text-center">
+            <h5 class="card-title">A Smart Voice-Driven System </h5>
+            <p class="card-text short-info">AI-based assistant that allows users to control devices, search information.</p>
+
+            <!-- Hidden Extra Info -->
+            <div class="extra-info">
+              <p>The Smart Voice-Driven System is an AI-powered assistant that enables users to interact with computers using natural voice commands, making technology more accessible, efficient, and intelligent.</p>
+              <!-- <a href="#" class="btn btn-sm btn-success">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-dark">GitHub</a> -->
+            </div>
+
+            <button class="btn btn-primary btn-sm mt-2 toggle-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
   <!-- Skills -->
   <section id="skills">
     <div class="container text-center">
       <h2 class="section-title">Skills</h2>
-      <span class="skill-badge">Python</span>
-      <span class="skill-badge">Flask</span>
-      <span class="skill-badge">Machine Learning</span>
-      <span class="skill-badge">AI</span>
+      <span class="skill-badge">Java</span>
+      <!-- <span class="skill-badge">Flask</span> -->
+      <span class="skill-badge">SQL</span>
+      
       <span class="skill-badge">HTML</span>
       <span class="skill-badge">CSS</span>
       <span class="skill-badge">JavaScript</span>
-      <span class="skill-badge">Flutter</span>
+      <span class="skill-badge">AI</span>
+      <span class="skill-badge">C</span>
+      <!-- <span class="skill-badge">Flutter</span> -->
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="contact-box">
-            <form>
-              <input class="form-control mb-3" placeholder="Your Name">
-              <input class="form-control mb-3" placeholder="Email">
-              <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
-              <button class="btn btn-custom w-100">Send Message</button>
-            </form>
-          </div>
+ <div id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <div class="contact-box">
+
+          <input class="form-control mb-3" placeholder="Your Name">
+          <input class="form-control mb-3" placeholder="Your Email">
+          <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+
+          <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=snehalatatate2004@gmail.com" 
+          target="_blank"
+          class="btn btn-custom w-100">
+          Send Message
+          </a>
+
         </div>
+
       </div>
     </div>
-  </section>
+  </div>
 
-  <footer>© 2026 Snehalata Tate • AI Developer Portfolio</footer>
+
+          <!-- Extra Contact Buttons -->
+
+          <div class="text-center mt-4">
+
+            <!-- <a href="mailto:snehalatatate2004@gmail.com" class="btn btn-custom">
+              Email Me
+            </a> -->
+
+            <a href="https://github.com/snehalatatate2004-AK" class="btn btn-custom">
+              GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/snehalata-tate-1646a128a/" class="btn btn-custom">
+              LinkedIn
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>© 2026 Snehalata Tate • Full Stack Developer Portfolio</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    const text = "AI Developer • ML Enthusiast • Future Innovator";
+    const text = "Full Stack Developer • ML Enthusiast • Future Innovator";
     let i = 0;
     function type() {
       if (i < text.length) {
@@ -244,6 +453,19 @@
     }
     type();
   </script>
+
+  <script>
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+      const card = this.closest(".project-card");
+      card.classList.toggle("show-details");
+
+      this.textContent =
+        this.textContent === "View Details" ? "Hide Details" : "View Details";
+    });
+  });
+</script>
+
 
 </body>
 </html>

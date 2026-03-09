@@ -12,3 +12,18 @@ setTimeout(type,60);
 
 
 window.onload = type;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
